@@ -1,0 +1,619 @@
+$color-primary-light: #dd6539;
+$color-primary-dark: rgb(145, 39, 0);
+$color-grey-text: rgb(85, 85, 85);
+$color-white-text: rgb(245, 245, 245);
+$color-grey-background: rgb(244, 244, 244);
+$color-secondary-light: rgb(255, 185, 0);
+$color-secondary-dark: rgb(255, 119, 48);
+$color-white: rgb(255, 255, 255);
+
+
+/*--------BASIC SETUP-------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 1.2rem;
+    
+}
+  
+  html {
+    color: $color-grey-text;
+    font-family: "Lato", "Arial", sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+    padding: 30px;
+
+    @include respond(tab-port) {
+        font-size: 50%;
+    }
+    @include respond(tab-land) {
+        font-size: 56.25%;
+    }
+    @include respond(big-desktop) {
+        font-size: 100%;
+    }
+    
+  }
+  
+  /*-------------HEADER-------------*/
+  header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url(../img/irfan-simsar-wxWulfjN-G0-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 95vh;
+    background-attachment: fixed;
+
+    @include respond(tab-port) {
+        font-size: 50%;
+    }
+    @include respond(tab-land) {
+        font-size: 56.25%;
+    }
+    @include respond(big-desktop) { 
+        font-size: 120%;
+    }
+}
+  
+  /*-------------------Buttons------------*/
+  .btn {
+    font-family: "Lato", "Arial", sans-serif;
+    letter-spacing: 1px;
+
+    @include respond(tab-port) {
+        font-size: 50%;
+    }
+    @include respond(tab-land) {
+        font-size: 60.25%;
+    }
+    @include respond(big-desktop) {
+        font-size: 120%;
+    }
+
+
+// Navigation Buttons
+    &_navigation { 
+    float: right;
+    list-style: none;
+    margin-top: 55px;
+    margin-right: 150px;
+    font-size: 100%;
+
+    
+    & li {
+        display: inline-block;
+        margin-left: 40px;
+        }
+          
+        & li a:link,
+        & li a:visited {
+            color: $color-white-text;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 100%;
+            border-bottom: 2px solid $color-primary-dark, transparent;
+            transition: linear 0.3s;  
+        }
+          
+          
+        & li a:hover,
+        & li a:active {
+        color: $color-primary-dark; 
+        }
+    }
+
+    
+      
+    // Demo Button 
+    &_demo {
+        margin-top: 28rem;
+        background-color: $color-white;
+        color: $color-grey-text;
+        padding: 15px 40px;
+        display: inline-block;
+        text-align: center;
+        border-radius: 100px;
+        transition: all .2s;
+
+        &:link,
+        &:visited {
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, .6);
+        }
+        &:active {
+            transform: translateY(-1px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, .6);
+        }
+    }
+
+    //Pop Up Button 
+    &_popup {
+        background-color: $color-white;
+        color: $color-grey-text;
+        padding: 15px 40px;
+        display: inline-block;
+        text-align: center;
+        border-radius: 100px;
+        transition: all .2s;
+        text-decoration: none;
+        position: absolute;
+        top: 50%;
+        left: 85%;
+        transform: translate(-50, -50%);
+    }
+}
+
+  
+  
+  
+  
+  .name-text {
+    position: absolute;
+    font-family: "Lato", "Arial", sans-serif;
+    font-weight: normal;
+    float: left;
+    top: 50%;
+    left: 25%;
+    color: $color-white-text;
+    font-size: 180%;
+    transform: translate(-30%, -35%);
+    transform: translate(-30%, -35%);
+    padding-left: 15px;
+    border-left: 2px solid $color-primary-dark;
+    border-right: 0;
+
+    @include respond(tab-port) {
+        font-size: 50%;
+    }
+    @include respond(tab-land) {
+        font-size: 2.7rem;
+    }
+    @include respond(big-desktop) {
+        font-size: 120%;
+    }
+
+  }
+  
+  h1 {
+  
+    letter-spacing: 4px; 
+  }
+  
+  /*----------------------ABOUT ME-------------------*/
+  .section-about-me {
+  
+    text-align: center;
+    color: $color-grey-text;
+    margin-left: 15%;
+    margin-right: 15%;
+    
+    @include respond(tab-port) {
+        font-size: 50%;
+    }
+    @include respond(tab-land) {
+        font-size: 56.25%;
+    }
+    @include respond(big-desktop) {
+        font-size: 100%;
+    }
+  }
+  
+  h2 {
+    font-size: 180%;
+    word-spacing: 2px;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    &:after {
+        display: block;
+        height: 2px;
+        background-color: $color-primary-light;
+        content: " ";
+        width: 200px;
+        margin: 0 auto;
+        margin-top: 20px; 
+      }
+      
+      @include respond(tab-port) {
+        font-size: 50%;
+    }
+    @include respond(tab-land) {
+        font-size: 2rem;
+    }
+    @include respond(big-desktop) {
+        font-size: 140%;
+    }
+  }
+  
+  
+  
+  .skill-box {
+    margin: 0 0 15% 40%;
+    float: left;
+    text-align: left;
+    padding-right: 5px 2px; 
+    & ul li {
+        list-style: none;
+        padding: 5px; 
+    }
+
+    @include respond(tab-port) {
+        font-size: 50%;
+    }
+    @include respond(tab-land) {
+        font-size: 56.25%;
+    }
+    @include respond(big-desktop) {
+        font-size: 100%;
+    }
+  }
+  
+  
+  // IonIcons
+  ion-icon {
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+    font-size: 120%;
+    color: $color-primary-light;
+    line-height: 120%;
+    vertical-align: middle;
+    margin-top: -5px;
+    margin-right: 10px;
+
+    @include respond(tab-port) {
+        font-size: 50%;
+    }
+    @include respond(tab-land) {
+        font-size: 56.25%;
+    }
+    @include respond(big-desktop) {
+        font-size: 100%;
+    }
+
+    &.linkedin {
+        color: #0077B5;
+    }
+
+    &.github {
+        color: #333;
+    }
+  }
+  
+  /*---------------------PROJECTS---------------------*/
+  .section-projects {
+    background-color: $color-grey-background;
+    text-align: center;
+    padding-top: 3px;
+    
+    @include respond(tab-port) {
+        font-size: 50%;
+    }
+    @include respond(tab-land) {
+        font-size: 56.25%;
+    }
+    @include respond(big-desktop) {
+        font-size: 100%;
+    }
+  }
+
+  .project-text-box {
+    margin-bottom: 3rem;
+    
+    @include respond(tab-port) {
+        font-size: 50%;
+        margin-top: 20px;
+    }
+    @include respond(tab-land) {
+        font-size: 56.25%;
+    }
+    @include respond(big-desktop) {
+        font-size: 100%;
+    }
+  }
+
+  .card {
+
+// FUNCTIONALITY 
+    perspective: 1500px;
+    -moz-perspective: 1500px;
+    position: relative;
+    height: 40rem;
+    width: 95%;
+    margin-left: 10%;
+    margin-bottom: 8%;
+
+    @include respond(tab-port) {
+        font-size: 50%;
+    }
+    @include respond(tab-land) {
+        font-size: 56.25%;
+    }
+    @include respond(big-desktop) {
+        font-size: 80%;
+    }
+    
+;
+    &_side {
+        height: 40rem;
+        transition: all .8s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 90%;
+        -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+        border-radius: 3px;
+        overflow: hidden;
+        box-shadow: 0 1.5rem 4rem RGB(black, .15);
+        
+        
+        &--front {
+            background-color: white;
+        }
+        &--back {
+            background-image: linear-gradient(to right bottom, $color-primary-dark, $color-secondary-dark);
+            transform: rotateY(180deg);
+        }
+    }
+
+    &:hover &_side--front {
+          transform: rotateY(-180deg);
+    }
+    &:hover &_side--back {
+        transform: rotateY(0);
+    }
+
+// FRONT SIDE STYLING
+    &_picture {
+        background-size: cover;
+        height: 20rem;
+        background-blend-mode: screen;
+        
+
+        &--1 {
+            background-image: linear-gradient(to right bottom, $color-primary-dark, $color-secondary-dark), url(../img/burger-small.png);
+        }
+        
+        &--2 {
+            background-image: linear-gradient(to right bottom, $color-primary-dark, $color-secondary-dark), url(../img/brett-jordan-u8mx5XTlVhk-unsplash.jpg);
+        }    
+
+        &--3 {
+            background-image: linear-gradient(to right bottom, $color-primary-dark, $color-secondary-dark), url(../img/erik-mclean-C3T8KTZxTFM-unsplash.jpg);
+        }    
+
+        &--4 {
+            background-image: linear-gradient(to right bottom, $color-primary-dark, $color-secondary-dark), url(../img/sharon-mccutcheon-8lnbXtxFGZw-unsplash.jpg);
+        }    
+    }
+
+    &_heading {
+        font-size: 2.8rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        text-align: right;
+        color: $color-white;
+        position: absolute;
+        top: 12rem;
+        right: 2rem;
+        width: 75%;
+
+    }
+
+    &_heading-span {
+        -webkit-box-decoration-break: clone;
+                box-decoration-break: clone;
+        background-image: linear-gradient(to right bottom, 
+        rgba($color-primary-dark, .85), 
+        rgba($color-secondary-dark, .85));
+    }
+
+    &_details {
+        padding: 3rem;
+
+        ul {
+            list-style: none;
+            width: 80%;
+            margin: 0 auto;
+            
+
+            li {
+                text-align: center;
+                font-size: 1.2rem;
+                padding: 1rem;
+
+                &:not(:last-child) {
+                    border-bottom: 1px solid $color-primary-light;
+                }
+
+            }
+        }
+    }
+
+    // Back Side Styling 
+    &_cta {
+        position: absolute;
+        top: 43%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    &_description {
+        font-size: 2.0rem;
+        font-weight: 100;
+        text-align: center;
+        margin-bottom: 2rem;
+        color: $color-white;
+    }
+}
+    
+    // Footer Styling 
+.footer {
+    background-color: $color-white;
+    font-family: "Lato", "Arial", sans-serif;
+    margin: 0 1rem;
+    
+    @include respond(tab-port) {
+        font-size: 50%;
+    }
+    @include respond(tab-land) {
+        font-size: 56.25%;
+    }
+    @include respond(big-desktop) {
+        font-size: 100%;
+    }
+
+    
+    &_navigation {
+        float: left;
+        list-style: none;
+        font-size: 1rem;
+
+        & li {
+            padding-bottom: .5rem;
+        }
+    }
+
+    &_link {
+        &:link,
+        &:visited {
+            color: $color-grey-text;
+            text-decoration: none;
+        }
+    }
+        
+
+
+    &_copyright {
+        float: right;
+    }
+
+}
+
+//Pop Up Videos
+.popup {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(black, .8);
+    opacity: 0;
+    visibility: hidden;
+    transition: all .5s;
+
+    @include respond(tab-port) {
+        font-size: 50%;
+    }
+    @include respond(tab-land) {
+        font-size: 56.25%;
+    }
+    @include respond(big-desktop) {
+        font-size: 100%;
+    }
+
+
+    &_content {
+        height: 75vh;
+        width: 75%;
+        background-color: $color-white;
+        box-shadow: 0 2rem 4rem rgba(black, .2);
+        position: absolute;
+        border-radius: 3px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: table;overflow: hidden;
+    }
+
+    
+    &_left {
+      width: 80%;
+      height: 100%;
+      float: left;
+      display: table-cell;
+    }
+
+    &_right {
+        width: 20%;
+        height: 100%;
+        float: right;
+        background-image: linear-gradient(to right bottom, $color-primary-dark, $color-secondary-dark);
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    &:target {
+        opacity: 1;
+        visibility: visible;
+    }
+
+
+    &_close {
+        &:link,
+        &:visited {
+            color: $color-white;
+            position: absolute;
+            top: .2rem;
+            right: .9rem;
+            font-size: 2rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: all .2s;
+        } 
+        
+        &:hover {
+            font-size: 3rem;
+            transition: all .2s;
+        }
+    }
+
+    &_resume {
+        height: 85vh;
+        width: 50%;
+        background-color: $color-white;
+        box-shadow: 0 2rem 4rem rgba(black, .2);
+        position: absolute;
+        border-radius: 3px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: table;overflow: hidden;
+
+        &__left {
+            width: 80%;
+            height: 100%;
+            float: left;
+            display: table-cell;
+          }
+
+        &_close {
+            &:link,
+            &:visited {
+                color: black;
+                position: absolute;
+                top: .2rem;
+                right: .9rem;
+                font-size: 2rem;
+                text-decoration: none;
+                display: inline-block;
+                transition: all .2s;
+            } 
+            
+            &:hover {
+                font-size: 3rem;
+                transition: all .2s;
+            }
+        }
+    }
+}
+
